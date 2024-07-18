@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyProject</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>MyProject</h1>
+      <h2>Greenfingers Landscaping Co</h2>
+
+      <!-- Main screen area with tasks and chart -->
+      <div class="project-container">
+        <!-- Divides screen into 2 columns to display tasks on left and chart on right -->
+        <div class="task-container">
+          <!-- Insert table with project tasks -->
+          <table id="tasks">
+            <thead>
+              <tr height="60">
+                <th>Task #</th>
+                <th>Task title</th>
+                <th>Start date</th>
+                <th>End date</th>
+                <th>Progress</th>
+                <th>Dep.#</th>
+              </tr>
+            </thead>
+            <tbody id="task-rows"></tbody>
+          </table>
+        </div>
+        <!-- Right column with project chart -->
+        <div class="chart-container">
+          <div id="gantt"></div>
+        </div>
+      </div>
+      <!-- end of project-container -->
+
+      <!-- Display a form to capture input -->
+      <form id="task-form">
+        <!-- Ask user to enter task name, start date and duration -->
+        <input type="text" id="task-name" placeholder="Task Name" required />
+        <input type="date" id="task-start" required />
+        <input
+          type="number"
+          id="task-duration"
+          placeholder="Task Duration (days)"
+          length="3"
+          required
+        />
+        <!-- submit button to add task -->
+        <button type="submit">Add New Task</button>
+      </form>
+    </div>
+    <!-- end container -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
